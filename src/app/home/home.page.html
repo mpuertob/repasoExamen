@@ -7,14 +7,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-label *ngIf="variable">
+    Label: {{variable}}
+  </ion-label>
+  <ion-input [(ngModel)]="variable" (click)="comprobar()">Input</ion-input>
+  <!-- <ion-label (click)="comprobar()">LabelEvento</ion-label>
+  <h1 (click)="comprobar()">h1Evento</h1> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ul *ngFor="let estacion of arrayEstaciones">
+    <li (click)="escuchar(estacion.nombre)">{{estacion.nombre}}</li>
+  </ul>
+  <ion-button (click)="irASaludaCliente()">SaludarCliente</ion-button>
 </ion-content>
