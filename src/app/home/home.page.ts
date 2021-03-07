@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Estacion } from '../core/model/Estacion';
+import { Persona } from '../core/model/persona';
+import { ObtenerDatosService } from '../obtener-datos.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +25,19 @@ export class HomePage {
     new Estacion('Invierno'),
   ];
   objEstacion: Estacion = new Estacion('Venga chavales');
-  constructor(private route: Router) {}
+  array: Persona[] = [];
+  constructor(
+    private route: Router,
+    private obtenerDatos: ObtenerDatosService
+  ) {
+    this.array = this.obtenerDatos.dameDatos();
+  }
+  obtenerNumero() {
+    return this.obtenerDatos.obtenerNumero();
+  }
+  aumentarNumero() {
+    return this.obtenerDatos.aumentarNumero();
+  }
   irASaludaCliente() {
     let frigo = {
       nombre: 'Frigo Carlos',

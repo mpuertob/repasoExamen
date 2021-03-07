@@ -18,4 +18,11 @@
     <li (click)="escuchar(estacion.nombre)">{{estacion.nombre}}</li>
   </ul>
   <ion-button (click)="irASaludaCliente()">SaludarCliente</ion-button>
+  <div *ngFor="let persona of array">
+    <ion-label>{{persona.nombre}}</ion-label>
+  </div>
+
+  <ion-label>{{obtenerNumero()}}</ion-label>
+  <ion-button (click)="aumentarNumero()">+</ion-button>
+
 </ion-content>

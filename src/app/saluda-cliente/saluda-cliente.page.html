@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <h1>
+  <!-- <h1>
     Soy Cliente - {{variableRecibida}}
   </h1>
   <h1>
@@ -23,4 +23,21 @@
   <h1>
     Soy Cliente Marcos - {{frigoMio | json}}
   </h1>
+  Lista Entera
+  <div *ngFor="let persona of arrayPersonas">
+    <ion-item>
+      <ion-label>Persona: {{persona.nombre}} - {{persona.edad}} - {{persona.casado}}</ion-label>
+    </ion-item>
+  </div>
+  Lista Carlos
+  <div *ngFor="let persona of arrayPersonas">
+    <ion-item *ngIf="isCarlos(persona.nombre)">
+      <ion-label>Persona: {{persona.nombre}} - {{persona.edad}} - {{persona.casado}}</ion-label>
+    </ion-item>
+  </div> -->
+  <ion-label>{{obtenerNumero()}}</ion-label>
+  <ion-button (click)="aumentarNumero()">+</ion-button>
+  <ion-label>
+    {{cadenaServicioPropio}}
+  </ion-label>
 </ion-content>
