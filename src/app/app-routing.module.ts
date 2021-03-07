@@ -19,6 +19,10 @@ const routes: Routes = [
         (m) => m.SaludaClientePageModule
       ),
   },
+  {
+    path: 'probando-mock',
+    loadChildren: () => import('./probando-mock/probando-mock.module').then( m => m.ProbandoMockPageModule)
+  },
 ];
 
 @NgModule({

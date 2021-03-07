@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Estacion } from '../core/model/Estacion';
 import { Persona } from '../core/model/persona';
-import { ObtenerDatosService } from '../obtener-datos.service';
+import { ObtenerDatosService } from '../share/obtener-datos.service';
 
 @Component({
   selector: 'app-home',
@@ -37,6 +37,9 @@ export class HomePage {
   }
   aumentarNumero() {
     return this.obtenerDatos.aumentarNumero();
+  }
+  navegarMock() {
+    this.route.navigate(['probando-mock']);
   }
   irASaludaCliente() {
     let frigo = {
